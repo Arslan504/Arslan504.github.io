@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="New Smile Dental Care Centre, Jehanabad, Bihar — gentle, modern dental care. Book an appointment on WhatsApp." />
+    <link rel="icon" href="data:," />
+    <title>New Smile Dental Care Centre — Jehanabad</title>
+    <style>
+      :root {
+        --bg: #f2f8f9;
+        --surface: #ffffff;
+        --surface-soft: #e7f3f4;
+        --ink: #10333a;
+        --ink-soft: #48666d;
+        --teal: #0e7c7b;
+        --teal-deep: #0a5e63;
+        --blue: #0b6cb4;
+        --wa: #1faa55;
+        --wa-deep: #178a44;
+        --line: #d7e7e9;
+        --hero-a: #0a5e63;
+        --hero-b: #0e7c7b;
+        --hero-c: #0b6cb4;
+        --shadow: 0 10px 30px rgba(10, 94, 99, 0.10);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0a1a1e;
+          --surface: #10262b;
+          --surface-soft: #16333a;
+          --ink: #e8f4f4;
+          --ink-soft: #a7c4c8;
+          --teal: #2bb3a3;
+          --teal-deep: #7fd1c8;
+          --blue: #4aa3e0;
+          --wa: #25c05e;
+          --wa-deep: #1faa55;
+          --line: #1f4046;
+          --hero-a: #07272b;
+          --hero-b: #0a4448;
+          --hero-c: #0a3d5c;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: 76px;
+      }
+      @media (min-width: 760px) { body { padding-bottom: 0; } }
+      h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+      a { color: inherit; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--hero-a) 0%, var(--hero-b) 55%, var(--hero-c) 130%);
+        color: #ffffff;
+      }
+      .hero .tooth-bg {
+        position: absolute;
+        right: -70px;
+        top: -30px;
+        width: 340px;
+        height: 340px;
+        opacity: 0.13;
+        pointer-events: none;
+      }
+      .hero .tooth-bg-2 {
+        position: absolute;
+        left: -90px;
+        bottom: -110px;
+        width: 260px;
+        height: 260px;
+        opacity: 0.08;
+        pointer-events: none;
+        transform: rotate(-18deg);
+      }
+      .hero-inner {
+        position: relative;
+        padding: 52px 0 56px;
+        max-width: 640px;
+      }
+      .hero-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 26px;
+      }
+      .hero-mark {
+        width: 52px; height: 52px;
+        background: rgba(255,255,255,0.16);
+        border: 1px solid rgba(255,255,255,0.35);
+        border-radius: 14px;
+        display: grid; place-items: center;
+        flex: none;
+      }
+      .hero-mark svg { width: 32px; height: 32px; }
+      .hero-brand-text { font-family: system-ui, sans-serif; font-weight: 700; font-size: 1.02rem; letter-spacing: 0.01em; }
+      .hero-brand-text small { display: block; font-family: system-ui, sans-serif; font-weight: 600; font-size: 0.8rem; opacity: 0.85; letter-spacing: 0.04em; }
+      .hero h1 {
+        font-size: clamp(2.1rem, 7vw, 3.4rem);
+        font-weight: 800;
+        margin-bottom: 14px;
+      }
+      .hero p.lede {
+        font-size: clamp(1.02rem, 3.4vw, 1.2rem);
+        font-weight: 500;
+        color: rgba(255,255,255,0.92);
+        margin: 0 0 30px;
+        max-width: 34em;
+      }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 22px;
+        border-radius: 14px;
+        font-weight: 800;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+      .btn svg { width: 22px; height: 22px; flex: none; }
+      .btn:active { transform: scale(0.98); }
+      .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 8px 22px rgba(0,0,0,0.22); }
+      .btn-wa:hover { background: var(--wa-deep); }
+      .btn-call {
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+        border: 1.5px solid rgba(255,255,255,0.65);
+      }
+      .btn-call:hover { background: rgba(255,255,255,0.22); }
+      .hero-meta {
+        margin-top: 26px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.88);
+      }
+      .hero-meta svg { width: 18px; height: 18px; flex: none; }
+
+      /* ---------- Sections ---------- */
+      section { padding: 52px 0 8px; }
+      .section-head { margin-bottom: 26px; max-width: 620px; }
+      .section-head h2 { font-size: clamp(1.55rem, 5vw, 2.1rem); font-weight: 700; margin-bottom: 8px; }
+      .section-head p { margin: 0; color: var(--ink-soft); font-size: 1rem; font-weight: 500; }
+
+      /* ---------- Services ---------- */
+      .services {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 560px) { .services { grid-template-columns: 1fr 1fr; } }
+      @media (min-width: 900px) { .services { grid-template-columns: 1fr 1fr 1fr; } }
+      .service {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .service .icon {
+        width: 52px; height: 52px;
+        border-radius: 14px;
+        background: var(--surface-soft);
+        color: var(--teal-deep);
+        display: grid; place-items: center;
+        margin-bottom: 14px;
+      }
+      .service .icon svg { width: 30px; height: 30px; }
+      .service h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 6px; }
+      .service p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; font-weight: 500; }
+
+      /* ---------- Why us ---------- */
+      .why {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 700px) { .why { grid-template-columns: 1fr 1fr; } }
+      .why-item {
+        display: flex;
+        gap: 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .why-item .tick {
+        width: 44px; height: 44px; flex: none;
+        border-radius: 50%;
+        background: var(--teal);
+        color: #fff;
+        display: grid; place-items: center;
+      }
+      @media (prefers-color-scheme: dark) { .why-item .tick { background: var(--surface-soft); color: var(--teal); } }
+      .why-item .tick svg { width: 24px; height: 24px; }
+      .why-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+      .why-item p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; font-weight: 500; }
+
+      /* ---------- Visit ---------- */
+      .visit-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        padding: 26px;
+        display: grid;
+        gap: 26px;
+      }
+      @media (min-width: 820px) {
+        .visit-card { grid-template-columns: 1fr 1.1fr; padding: 34px; }
+      }
+      .visit-info h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; }
+      .visit-row { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
+      .visit-row svg { width: 22px; height: 22px; flex: none; color: var(--teal); margin-top: 2px; }
+      .visit-row .label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+      .visit-row .value { font-size: 1.02rem; font-weight: 700; }
+      .visit-row a.value { text-decoration: none; }
+      .visit-row a.value:hover { color: var(--teal-deep); text-decoration: underline; }
+      .contact-list { display: grid; gap: 12px; align-content: start; }
+      .contact-btn {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 15px 18px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1rem;
+        border: 1.5px solid var(--line);
+        background: var(--surface);
+        transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      }
+      .contact-btn:active { transform: scale(0.99); }
+      .contact-btn svg { width: 24px; height: 24px; flex: none; }
+      .contact-btn .sub { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); }
+      .contact-btn .arrow { margin-left: auto; color: var(--ink-soft); font-weight: 800; }
+      .contact-btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
+      .contact-btn.wa .sub { color: rgba(255,255,255,0.85); }
+      .contact-btn.wa .arrow { color: rgba(255,255,255,0.85); }
+      .contact-btn.wa:hover { background: var(--wa-deep); }
+      .contact-btn.google svg { color: #e8a13a; }
+      .contact-btn.fb svg { color: #1877f2; }
+      .contact-btn.ig svg { color: #d6336c; }
+      .contact-btn:hover { border-color: var(--teal); }
+
+      /* ---------- Footer ---------- */
+      footer {
+        margin-top: 56px;
+        background: var(--surface);
+        border-top: 1px solid var(--line);
+        padding: 30px 0 34px;
+        text-align: center;
+      }
+      footer .foot-name { font-family: system-ui, sans-serif; font-weight: 700; font-size: 1rem; }
+      footer p { margin: 6px 0 0; color: var(--ink-soft); font-size: 0.86rem; font-weight: 500; }
+
+      /* ---------- Sticky mobile action bar ---------- */
+      .sticky-bar {
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 20;
+        display: flex;
+        gap: 10px;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        background: var(--surface);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -6px 24px rgba(10, 94, 99, 0.12);
+      }
+      .sticky-bar a {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 10px;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 0.98rem;
+        text-decoration: none;
+      }
+      .sticky-bar svg { width: 20px; height: 20px; }
+      .sticky-bar .s-call { border: 1.5px solid var(--teal); color: var(--teal-deep); }
+      .sticky-bar .s-wa { background: var(--wa); color: #fff; }
+      @media (min-width: 760px) { .sticky-bar { display: none; } }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .btn, .contact-btn { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <svg class="tooth-bg" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2.2c-1.9 0-2.6.7-4.3.7C4.9 2.9 2.6 5 2.6 8.1c0 1.9.7 3.2 1.3 4.8.6 1.7 1 3.6 1.3 5.4.2 1.4.6 2.9 1.9 2.9 1.5 0 1.4-2.1 1.8-3.5.3-1.1.9-2.2 2.1-2.2s1.8 1.1 2.1 2.2c.4 1.4.3 3.5 1.8 3.5 1.3 0 1.7-1.5 1.9-2.9.3-1.8.7-3.7 1.3-5.4.6-1.6 1.3-2.9 1.3-4.8 0-3.1-2.3-5.2-5.1-5.2-1.7 0-2.4-.7-4.3-.7z"/></svg>
+      <svg class="tooth-bg-2" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2.2c-1.9 0-2.6.7-4.3.7C4.9 2.9 2.6 5 2.6 8.1c0 1.9.7 3.2 1.3 4.8.6 1.7 1 3.6 1.3 5.4.2 1.4.6 2.9 1.9 2.9 1.5 0 1.4-2.1 1.8-3.5.3-1.1.9-2.2 2.1-2.2s1.8 1.1 2.1 2.2c.4 1.4.3 3.5 1.8 3.5 1.3 0 1.7-1.5 1.9-2.9.3-1.8.7-3.7 1.3-5.4.6-1.6 1.3-2.9 1.3-4.8 0-3.1-2.3-5.2-5.1-5.2-1.7 0-2.4-.7-4.3-.7z"/></svg>
+      <div class="wrap">
+        <div class="hero-inner">
+          <div class="hero-brand">
+            <span class="hero-mark">
+              <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2.2c-1.9 0-2.6.7-4.3.7C4.9 2.9 2.6 5 2.6 8.1c0 1.9.7 3.2 1.3 4.8.6 1.7 1 3.6 1.3 5.4.2 1.4.6 2.9 1.9 2.9 1.5 0 1.4-2.1 1.8-3.5.3-1.1.9-2.2 2.1-2.2s1.8 1.1 2.1 2.2c.4 1.4.3 3.5 1.8 3.5 1.3 0 1.7-1.5 1.9-2.9.3-1.8.7-3.7 1.3-5.4.6-1.6 1.3-2.9 1.3-4.8 0-3.1-2.3-5.2-5.1-5.2-1.7 0-2.4-.7-4.3-.7z"/></svg>
+            </span>
+            <span class="hero-brand-text">New Smile Dental<small>DENTAL CARE CENTRE · JEHANABAD</small></span>
+          </div>
+          <h1>Healthy smiles for Jehanabad, one visit at a time.</h1>
+          <p class="lede">Gentle, modern dental care for the whole family — from routine check-ups to complete smile makeovers, right here in your own town.</p>
+          <div class="hero-actions">
+            <a class="btn btn-wa" href="https://wa.me/917903979609" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.03h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.19-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              Book Appointment on WhatsApp
+            </a>
+            <a class="btn btn-call" href="tel:+917903979609">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call +91 79039 79609
+            </a>
+          </div>
+          <div class="hero-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Al-Haaj Manzil, New Mahalla, Jehanabad, Bihar 804408
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- ============ SERVICES ============ -->
+      <section aria-labelledby="services-h">
+        <div class="section-head">
+          <h2 id="services-h">Our services</h2>
+          <p>Complete dental care under one roof — for children, adults and the whole family.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4c-1.6 0-2.2.6-3.6.6C5.9 4 4 5.8 4 8.4c0 1.6.6 2.7 1.1 4 .5 1.4.8 3 1.1 4.5.2 1.2.5 2.4 1.6 2.4 1.2 0 1.2-1.8 1.5-2.9.3-.9.7-1.9 1.7-1.9s1.4 1 1.7 1.9c.3 1.1.3 2.9 1.5 2.9 1.1 0 1.4-1.2 1.6-2.4.3-1.5.6-3.1 1.1-4.5.5-1.3 1.1-2.4 1.1-4 0-2.6-1.9-4.4-4.4-4.4-1.4 0-2-.6-3.6-.6z"/><path d="m9.3 10.2 1.9 1.9 3.4-3.6"/></svg>
+            </span>
+            <h3>General Dentistry</h3>
+            <p>Check-ups, cleaning, fillings and everyday care to keep your teeth healthy.</p>
+          </article>
+          <article class="service">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3h7l-.6 3h-5.8L8.5 3z"/><path d="M9.2 6h5.6l-.5 3h-4.6L9.2 6z"/><path d="M9.7 9h4.6l-1 4.2c-.2.8-.5 1.3-1.3 2.8-.8-1.5-1.1-2-1.3-2.8L9.7 9z"/><path d="M5 20.5c2.3-1.2 4.7-1.2 7 0 2.3-1.2 4.7-1.2 7 0"/></svg>
+            </span>
+            <h3>Dental Implants</h3>
+            <p>Permanent, natural-feeling replacements for missing teeth.</p>
+          </article>
+          <article class="service">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4c-1.6 0-2.2.6-3.6.6C5.9 4 4 5.8 4 8.4c0 1.6.6 2.7 1.1 4 .5 1.4.8 3 1.1 4.5.2 1.2.5 2.4 1.6 2.4 1.2 0 1.2-1.8 1.5-2.9.3-.9.7-1.9 1.7-1.9s1.4 1 1.7 1.9c.3 1.1.3 2.9 1.5 2.9 1.1 0 1.4-1.2 1.6-2.4.3-1.5.6-3.1 1.1-4.5.5-1.3 1.1-2.4 1.1-4 0-2.6-1.9-4.4-4.4-4.4-1.4 0-2-.6-3.6-.6z"/><path d="M12 8v4.2M10.2 10.4 12 12.2l1.8-1.8M9.6 16.6c.5-1.3 1.3-2 2.4-2s1.9.7 2.4 2"/></svg>
+            </span>
+            <h3>Root Canal Treatment</h3>
+            <p>Save an infected tooth and end tooth pain with careful, gentle treatment.</p>
+          </article>
+          <article class="service">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.5c2.7 2.6 5.4 3.9 8 3.9s5.3-1.3 8-3.9"/><path d="M3 11.5h18"/><rect x="6.2" y="9.6" width="3.4" height="3.8" rx="0.9"/><rect x="10.3" y="9.6" width="3.4" height="3.8" rx="0.9"/><rect x="14.4" y="9.6" width="3.4" height="3.8" rx="0.9"/><path d="M6 5.8c1.9-1 3.9-1.5 6-1.5s4.1.5 6 1.5"/></svg>
+            </span>
+            <h3>Braces &amp; Orthodontics</h3>
+            <p>Straighten teeth and correct your bite for a confident, aligned smile.</p>
+          </article>
+          <article class="service">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.6 5.2c-1.3 0-1.8.5-3 .5-2 0-3.6 1.5-3.6 3.7 0 1.3.5 2.2.9 3.3.4 1.2.7 2.5.9 3.7.1 1 .4 2 1.3 2 1 0 1-1.5 1.3-2.4.2-.8.6-1.6 1.4-1.6"/><path d="M17.8 3.4l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7zM20.3 10.6l.4 1.1 1.1.4-1.1.4-.4 1.1-.4-1.1-1.1-.4 1.1-.4.4-1.1z"/></svg>
+            </span>
+            <h3>Teeth Whitening</h3>
+            <p>Brighten stained or dull teeth for a fresher, whiter smile.</p>
+          </article>
+          <article class="service">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6c-1.5 0-2 .5-3.3.5C6.4 4.1 4.7 5.7 4.7 8c0 1.5.5 2.5 1 3.7.5 1.3.8 2.8 1 4.2.2 1.1.5 2.2 1.5 2.2 1.1 0 1.1-1.6 1.4-2.7.3-.8.7-1.7 1.4-1.7s1.1.9 1.4 1.7c.3 1.1.3 2.7 1.4 2.7 1 0 1.3-1.1 1.5-2.2.2-1.4.5-2.9 1-4.2.5-1.2 1-2.2 1-3.7 0-2.3-1.7-3.9-4-3.9-1.3 0-1.8-.5-3.3-.5z"/><path d="M9.4 9.6h.01M14.6 9.6h.01" stroke-width="2.6"/><path d="M9.8 12.2c.7.7 1.4 1 2.2 1s1.5-.3 2.2-1"/></svg>
+            </span>
+            <h3>Kids Dentistry</h3>
+            <p>Friendly, patient dental care that keeps little smiles healthy and fear-free.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ WHY CHOOSE US ============ -->
+      <section aria-labelledby="why-h">
+        <div class="section-head">
+          <h2 id="why-h">Why patients choose us</h2>
+          <p>Good dentistry is about trust as much as treatment.</p>
+        </div>
+        <div class="why">
+          <div class="why-item">
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M9 20h6M12 16v4"/><path d="M12 12.5a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6z"/></svg></span>
+            <div>
+              <h3>Modern equipment</h3>
+              <p>Up-to-date tools and techniques for accurate diagnosis and better results.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.6a5 5 0 0 0-8.8-3.2A5 5 0 0 0 3.2 8.6c0 5 8.8 10.9 8.8 10.9s8.8-5.9 8.8-10.9z"/></svg></span>
+            <div>
+              <h3>Gentle, painless treatment</h3>
+              <p>A calm, careful approach that keeps nervous patients comfortable.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="m9 11.8 2.2 2.2 4-4.2"/></svg></span>
+            <div>
+              <h3>Honest advice</h3>
+              <p>Clear explanations and only the treatment you actually need — nothing extra.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m10.8 15.2 1.8 1.8 3.4-3.6"/></svg></span>
+            <div>
+              <h3>Easy appointments on WhatsApp</h3>
+              <p>Message us anytime to book — no queues, no waiting on hold.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ VISIT US ============ -->
+      <section aria-labelledby="visit-h">
+        <div class="section-head">
+          <h2 id="visit-h">Visit us</h2>
+          <p>Find us in New Mahalla, Jehanabad — or reach us on any of these.</p>
+        </div>
+        <div class="visit-card">
+          <div class="visit-info">
+            <h3>New Smile Dental Care Centre</h3>
+            <div class="visit-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <span class="label">Address</span>
+                <div class="value">Al-Haaj Manzil, New Mahalla,<br />Jehanabad, Bihar 804408</div>
+              </div>
+            </div>
+            <div class="visit-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <span class="label">Phone / WhatsApp</span>
+                <div><a class="value" href="tel:+917903979609">+91 79039 79609</a></div>
+              </div>
+            </div>
+            <div class="visit-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <div>
+                <span class="label">Fastest way to book</span>
+                <div class="value">Send us a WhatsApp message</div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-list">
+            <a class="contact-btn wa" href="https://wa.me/917903979609" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.03h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.19-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              <span>WhatsApp us<span class="sub">Book an appointment</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="contact-btn google" href="https://search.google.com/local/writereview?placeid=ChIJLbPTCiG18jkRYjuuX71BLvE" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 5.87 6.48.94-4.69 4.57 1.11 6.45L12 17.35l-5.8 3.08 1.11-6.45L2.62 9.41l6.48-.94L12 2.6z"/></svg>
+              <span>Review us on Google<span class="sub">Share your experience</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="contact-btn fb" href="https://www.facebook.com/newsmiledentalcarecentre" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.2v3h2.5v7h2.8z"/></svg>
+              <span>Facebook<span class="sub">Follow the clinic page</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="contact-btn ig" href="https://www.instagram.com/new_smile_dental_care_centre" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram<span class="sub">@new_smile_dental_care_centre</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-name">New Smile Dental Care Centre</div>
+        <p>Al-Haaj Manzil, New Mahalla, Jehanabad, Bihar 804408 · +91 79039 79609</p>
+        <p>© 2026 New Smile Dental Care Centre, Jehanabad. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- ============ STICKY MOBILE BAR ============ -->
+    <nav class="sticky-bar" aria-label="Quick contact">
+      <a class="s-call" href="tel:+917903979609">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+      <a class="s-wa" href="https://wa.me/917903979609" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+        WhatsApp
+      </a>
+    </nav>
+
+  </body>
+</html>
