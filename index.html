@@ -197,6 +197,17 @@
       .foot-name { font-size: 0.92rem; font-weight: 700; color: var(--ink); }
       .foot-loc { margin-top: 3px; font-size: 0.84rem; color: var(--ink-3); }
 
+      .clinic-photo {
+        width: 100%;
+        margin: 4px 0 2px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(10, 94, 99, 0.10);
+        box-shadow: 0 10px 26px rgba(7, 39, 43, 0.14);
+        line-height: 0;
+      }
+      .clinic-photo img { width: 100%; height: auto; display: block; }
+
       @media (max-width: 360px) {
         h1 { font-size: 1.52rem; }
         .link-btn { padding: 13px 14px 13px 13px; gap: 12px; }
@@ -228,6 +239,10 @@
       </header>
 
       <div class="divider" aria-hidden="true"></div>
+
+      <div class="clinic-photo">
+        <img src="clinic-1.jpg" alt="Treatment room at New Smile Dental Care Centre, Jehanabad" width="720" height="540" />
+      </div>
 
       <nav class="links" aria-label="Contact and social links">
         <!-- WhatsApp -->
