@@ -1,1 +1,466 @@
-<!-- Placeholder — will be replaced by the leadcatch page upload -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>LeadCatch OS — We Reply So You Don't Lose Customers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f4f6f6; --bg-2:#eaf0ef; --surface:#ffffff; --surface-2:#eef3f2;
+    --ink:#0d1b1e; --ink-2:#3d5257; --ink-3:#6b8287; --line:#d8e2e0;
+    --teal:#0b7668; --teal-deep:#074f46; --teal-soft:#dff2ee;
+    --amber:#b97a0f; --amber-soft:#fbeed3; --red:#b3372a; --red-soft:#fbe7e3;
+    --dark-bg:#0a1517; --dark-surface:#102024; --dark-ink:#eaf4f2;
+    --chat-in:#ffffff; --chat-out:#d9f2e8; --shadow:0 18px 44px rgba(9,47,42,.12); --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#081214; --bg-2:#0b1a1d; --surface:#0f1f23; --surface-2:#13282c;
+      --ink:#e9f4f2; --ink-2:#a9c2c0; --ink-3:#75908e; --line:#1f3a3e;
+      --teal:#2fbfa9; --teal-deep:#0b7668; --teal-soft:#123c37;
+      --amber:#e2a63d; --amber-soft:#3a2c10; --red:#e0705f; --red-soft:#3c1d18;
+      --chat-in:#16292d; --chat-out:#0e3b34; --shadow:0 18px 44px rgba(0,0,0,.45);
+    }
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Sora",sans-serif;margin:0;line-height:1.15;letter-spacing:-.01em}
+  p{margin:0} a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  section{padding:64px 0}
+  .sec-head{max-width:720px;margin-bottom:32px}
+  .sec-head h2{font-size:clamp(28px,4vw,38px);font-weight:700;margin-bottom:12px}
+  .sec-head p{color:var(--ink-2);font-size:18px}
+  .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid var(--line);background:var(--surface);padding:6px 11px;border-radius:999px;margin-bottom:16px}
+  .topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar-in{display:flex;align-items:center;gap:18px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Sora",sans-serif;font-weight:800;font-size:18px;text-decoration:none}
+  .brand-mark{width:32px;height:32px;border-radius:9px;background:var(--teal);color:#fff;display:grid;place-items:center;flex:none}
+  .brand-mark svg{width:18px;height:18px}
+  .brand span em{font-style:normal;color:var(--teal)}
+  .topnav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .topnav a{color:var(--ink-2);text-decoration:none;font-weight:700;font-size:15px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font-family:"Manrope",sans-serif;font-weight:800;font-size:16px;padding:13px 22px;border-radius:12px;text-decoration:none}
+  .btn-primary{background:var(--teal);color:#fff} .btn-primary:hover{background:var(--teal-deep)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+  .btn-sm{padding:10px 16px;font-size:14.5px}
+  .btn-big{font-size:18px;padding:16px 28px;border-radius:14px}
+  @media (max-width:760px){ .topnav a:not(.btn){display:none} }
+  .hero{padding:52px 0 56px;background:var(--bg-2);border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+  .hero h1{font-size:clamp(36px,5.6vw,56px);font-weight:800;margin-bottom:16px}
+  .hero h1 .hl{color:var(--teal)}
+  .hero .lede{font-size:19px;color:var(--ink-2);max-width:540px;margin-bottom:14px}
+  .hero .lede strong{color:var(--ink)}
+  .simple-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:20px 0;max-width:540px}
+  .simple-box p{font-size:16px;margin-bottom:6px} .simple-box p:last-child{margin-bottom:0}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+  .price-pill{display:inline-flex;align-items:center;gap:8px;background:var(--amber-soft);border:1px solid #e8c87a;color:#5c3d05;padding:8px 14px;border-radius:999px;font-weight:800;font-size:15px}
+  @media (prefers-color-scheme: dark){ .price-pill{color:#f5d98a;border-color:#5a4515} }
+  .micro{font-size:14px;color:var(--ink-3)}
+  .hero-stats{display:flex;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;max-width:540px;margin-top:22px}
+  .hstat{flex:1;padding:14px 16px;border-right:1px solid var(--line)} .hstat:last-child{border-right:0}
+  .hstat b{display:block;font-family:"Sora",sans-serif;font-size:20px;font-weight:800}
+  .hstat span{font-size:13px;color:var(--ink-3);font-weight:600;line-height:1.3;display:block}
+
+  .phone-stage{display:flex;justify-content:center}
+  .phone{width:min(360px,100%);background:#12262b;border-radius:38px;padding:11px;box-shadow:var(--shadow)}
+  @media (prefers-color-scheme: dark){ .phone{background:var(--dark-bg)} }
+  .phone-screen{background:var(--bg);border-radius:29px;overflow:hidden;display:flex;flex-direction:column;height:560px}
+  .chat-head{background:var(--teal-deep);color:#fff;padding:14px 16px 12px}
+  .chat-head .row{display:flex;align-items:center;gap:11px}
+  .avatar{width:38px;height:38px;border-radius:50%;background:#fff;color:var(--teal-deep);display:grid;place-items:center;font-family:"Sora",sans-serif;font-weight:800;font-size:15px;flex:none}
+  .chat-head b{font-size:15.5px;display:block;line-height:1.25} .chat-head span{font-size:12.5px;opacity:.85}
+  .chat-head .live{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;background:rgba(255,255,255,.16);padding:4px 8px;border-radius:999px;display:flex;align-items:center;gap:6px}
+  .live i{width:7px;height:7px;border-radius:50%;background:#4ade80;display:block}
+  .chat-body{flex:1;overflow-y:auto;padding:16px 13px 10px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth}
+  .chat-idle{margin:auto;text-align:center;color:var(--ink-3);padding:24px}
+  .chat-idle .big{font-family:"Sora",sans-serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px}
+  .day-chip{align-self:center;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;color:var(--ink-3);background:var(--surface-2);border:1px solid var(--line);padding:4px 10px;border-radius:999px;margin:2px 0 4px}
+  .msg{max-width:84%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.45;animation:pop .3s ease both;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  @keyframes pop{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+  .msg .who{display:block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px;opacity:.65}
+  .msg .time{display:block;text-align:right;font-family:"JetBrains Mono",monospace;font-size:10.5px;margin-top:5px;opacity:.55}
+  .msg.patient{align-self:flex-start;background:var(--chat-in);border:1px solid var(--line);border-bottom-left-radius:4px}
+  .msg.lc{align-self:flex-end;background:var(--chat-out);border-bottom-right-radius:4px} .msg.lc .who{color:var(--teal)}
+  .msg.alert{align-self:stretch;max-width:100%;background:var(--red-soft);border:1px solid var(--red);border-radius:12px}
+  .msg.alert .who{color:var(--red)} .msg.digest{align-self:stretch;max-width:100%;background:var(--surface);border:1.5px solid var(--teal);border-radius:12px} .msg.digest .who{color:var(--teal)}
+  .digest-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;margin-top:7px;font-size:13.5px}
+  .digest-grid div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-bottom:3px} .digest-grid b{font-family:"JetBrains Mono",monospace}
+  .typing{align-self:flex-end;background:var(--chat-out);border-radius:14px;border-bottom-right-radius:4px;padding:12px 15px;display:flex;gap:5px}
+  .typing i{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:blink 1s infinite} .typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+  @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+  .chat-controls{display:flex;align-items:center;gap:10px;padding:12px 14px;border-top:1px solid var(--line);background:var(--surface)}
+  .play-btn{width:44px;height:44px;border-radius:50%;border:0;background:var(--teal);color:#fff;cursor:pointer;display:grid;place-items:center;flex:none}
+  .play-btn svg{width:18px;height:18px} .progress{flex:1;height:6px;border-radius:99px;background:var(--surface-2);overflow:hidden} .progress i{display:block;height:100%;width:0%;background:var(--teal);border-radius:99px;transition:width .3s linear}
+  .chat-controls .lbl{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-3);font-weight:600;white-space:nowrap}
+  .demo-note{text-align:center;color:var(--ink-3);font-size:13.5px;margin-top:14px} .demo-note b{color:var(--ink-2)}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px} @media (max-width:860px){ .grid3{grid-template-columns:1fr} }
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card h3{font-size:19px;margin-bottom:8px} .card p{color:var(--ink-2);font-size:16px}
+  .card .num{width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+  .card .emoji-big{font-size:28px;margin-bottom:10px;display:block}
+
+  .how{background:var(--dark-bg);color:var(--dark-ink)} .how .sec-head p{color:#9db8b5} .how .tag{background:transparent;border-color:#23424a;color:#2fbfa9}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px} @media (max-width:960px){ .steps{grid-template-columns:1fr 1fr} } @media (max-width:540px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--dark-surface);border:1px solid #1f3a3e;border-radius:var(--radius);padding:22px}
+  .step .n{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:#2fbfa9;border:1px solid #23424a;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;margin-bottom:14px}
+  .step h3{font-size:17px;margin-bottom:8px;color:#eaf4f2} .step p{font-size:15px;color:#9db8b5}
+
+  .qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} @media (max-width:820px){ .qa-grid{grid-template-columns:1fr} }
+  .qa{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .qa h3{font-size:17px;margin-bottom:8px} .qa p{color:var(--ink-2);font-size:15.5px} .qa strong{color:var(--ink)}
+
+  .safe-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} @media (max-width:820px){ .safe-grid{grid-template-columns:1fr} }
+  .safe-card{border-radius:var(--radius);padding:24px;border:1px solid var(--line)} .safe-card.never{background:var(--red-soft)} .safe-card.always{background:var(--teal-soft)}
+  .safe-card h3{font-size:18px;margin-bottom:14px} .safe-card ul{list-style:none;margin:0;padding:0;display:grid;gap:10px} .safe-card li{font-size:15.5px;color:var(--ink-2)} .safe-card li b{color:var(--ink)}
+
+  .pricing{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .price-hero{max-width:640px;margin:0 auto;background:var(--surface);border:2px solid var(--teal);border-radius:20px;padding:32px;text-align:center;box-shadow:var(--shadow)}
+  .price-hero .big-price{font-family:"Sora",sans-serif;font-size:72px;line-height:1;font-weight:800;color:var(--teal)}
+  .price-hero .big-price small{font-size:22px;color:var(--ink-3)}
+  .price-hero ul{list-style:none;text-align:left;max-width:420px;margin:22px auto;padding:0;display:grid;gap:10px}
+  .price-hero li{display:flex;gap:10px;font-size:16px;color:var(--ink-2)} .price-hero li svg{width:18px;height:18px;color:var(--teal);flex:none;margin-top:3px}
+  .price-alt{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:640px;margin:18px auto 0} @media (max-width:600px){ .price-alt{grid-template-columns:1fr} }
+  .price-alt .mini{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center} .price-alt .mini b{font-size:22px}
+
+  .faq-list{max-width:760px;display:grid;gap:10px}
+  .faq{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .faq button{width:100%;text-align:left;background:none;border:0;cursor:pointer;font-family:"Manrope",sans-serif;font-weight:800;font-size:16px;color:var(--ink);padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq button .chev{flex:none;width:26px;height:26px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;transition:transform .25s ease}
+  .faq.open button .chev{transform:rotate(180deg)} .faq .ans{display:none;padding:0 20px 18px;color:var(--ink-2);font-size:15.5px} .faq.open .ans{display:block}
+
+  .final{background:var(--teal-deep);color:#eafaf6} .final-in{text-align:center;max-width:640px;margin:0 auto}
+  .final h2{font-size:clamp(28px,4.4vw,38px);margin-bottom:14px;color:#fff} .final p{color:#bfe6dd;font-size:18px;margin-bottom:24px}
+  .final .btn-primary{background:#fff;color:var(--teal-deep)} .final .micro{margin-top:14px;font-size:13.5px;color:#8fc9bd}
+  footer{padding:28px 0 36px;color:var(--ink-3);font-size:14px} .foot-in{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .msg,.typing i{animation:none} }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.8 22 19 10h-6.5L13 2z"/></svg></span>
+      <span>LeadCatch <em>OS</em></span>
+    </a>
+    <nav class="topnav">
+      <a href="#what">What is it?</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Price — $1 (₹99)</a>
+      <a class="btn btn-primary btn-sm" href="#pricing">Start for $1</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="demo">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag">For clinics &amp; shops</span>
+        <h1>You miss messages.<br>You lose customers.<br><span class="hl">We fix that.</span></h1>
+        <p class="lede">A customer messages you at night. You are closed. You reply next morning. <strong>Too late — they already went to someone else.</strong></p>
+
+        <div class="simple-box">
+          <p><strong>In simple words:</strong></p>
+          <p>LeadCatch is a helper that sits on your WhatsApp. It replies to customers in under 1 minute — day or night — so you never lose them.</p>
+          <p>It is <strong>not a website</strong>. You install nothing. We run it for you.</p>
+        </div>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-big" href="#pricing">Try it for $1 (₹99) →</a>
+          <button class="btn btn-ghost" id="heroPlay" type="button">▶ Watch demo (2 min)</button>
+        </div>
+        <p class="micro">Only $1 (₹99) to start • 14 days • No setup fee • No card tricks • Cancel anytime</p>
+
+        <div class="hero-stats">
+          <div class="hstat"><b>&lt; 1 min</b><span>We reply this fast, 24 hours</span></div>
+          <div class="hstat"><b>3 times</b><span>We follow up if they go silent</span></div>
+          <div class="hstat"><b>8 AM daily</b><span>You get a short report</span></div>
+        </div>
+      </div>
+
+      <div class="phone-stage">
+        <div>
+          <div class="phone" aria-label="LeadCatch demo">
+            <div class="phone-screen">
+              <div class="chat-head">
+                <div class="row">
+                  <span class="avatar">BS</span>
+                  <div><b>BrightSmile Dental</b><span>Pune · example clinic</span></div>
+                  <span class="live"><i></i>ON</span>
+                </div>
+              </div>
+              <div class="chat-body" id="chatBody">
+                <div class="chat-idle" id="chatIdle">
+                  <p class="big">Watch one night.</p>
+                  <p>Press play. See what happens when a patient messages at 9:47 PM and the clinic is closed.</p>
+                </div>
+              </div>
+              <div class="chat-controls">
+                <button class="play-btn" id="playBtn" type="button" aria-label="Play demo"><svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
+                <div class="progress"><i id="progressBar"></i></div>
+                <span class="lbl" id="demoStep">0 / 12</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-note">This is an example. The reply system is real and tested — <b>6 out of 6 tests passed</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS IT - SUPER SIMPLE -->
+  <section id="what">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">What is it?</span>
+        <h2>Think of it like a receptionist who never sleeps.</h2>
+        <p>You already have a receptionist in the day. At night, you have no one. LeadCatch is that night person — but it works all day too.</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <span class="emoji-big">💬</span>
+          <h3>Customer sends a message</h3>
+          <p>On your normal WhatsApp number. Same number. Nothing changes for them. They just type like always.</p>
+        </article>
+        <article class="card">
+          <span class="emoji-big">⚡</span>
+          <h3>We reply in under 1 minute</h3>
+          <p>We say hello, ask what they need, give your prices and timings, and offer a time to come in. In your name.</p>
+        </article>
+        <article class="card">
+          <span class="emoji-big">📋</span>
+          <h3>You see everything in the morning</h3>
+          <p>At 8 AM you get one short message: who asked, who booked, who needs you to call them yourself.</p>
+        </article>
+      </div>
+
+      <div style="background:var(--amber-soft);border-radius:14px;padding:20px 22px;margin-top:20px;border:1px solid var(--line)">
+        <p style="font-size:17px"><strong>Example — a cloth shop:</strong> At 9 PM a lady asks “Lehenga price? Blue colour hai?” LeadCatch replies right away with your price and photo, asks her size and budget, and reminds her next day if she goes silent. You wake up and see she is serious. You call her. She buys.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">How it works</span>
+        <h2>4 simple steps. Every day. Automatically.</h2>
+        <p>No work for you after setup. This just runs.</p>
+      </div>
+      <div class="steps">
+        <article class="step"><span class="n">1</span><h3>Reply fast</h3><p>Customer messages → we reply in under 1 minute. Night, Sunday, holiday — always.</p></article>
+        <article class="step"><span class="n">2</span><h3>Ask &amp; book</h3><p>We ask 2-3 simple questions and offer a real time from your shop hours. If they say yes, it's booked.</p></article>
+        <article class="step"><span class="n">3</span><h3>Chase if silent</h3><p>If they stop replying, we message again after 2 hours, next day, and after 3 days. Gently. Then we stop.</p></article>
+        <article class="step"><span class="n">4</span><h3>Report to you</h3><p>Every morning at 8 AM, one short report on your phone. Who came, who booked, who needs you.</p></article>
+      </div>
+      <p style="margin-top:18px;color:#c7dcd9;font-size:16px;background:var(--dark-surface);border:1px solid #1f3a3e;border-radius:12px;padding:16px 18px"><strong style="color:#fff">If it's risky, we stop.</strong> If a customer is angry, asks for medicine, or wants to bargain on price — we do NOT answer. We send it to you right away.</p>
+    </div>
+  </section>
+
+  <!-- YOUR QUESTIONS - DIRECT ANSWERS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Your questions, plain answers</span>
+        <h2>Everything people ask us, in simple words.</h2>
+      </div>
+      <div class="qa-grid">
+        <article class="qa"><h3>❓ Is this a website?</h3><p><strong>No.</strong> This page you are reading is just our shop window. The product is <strong>not</strong> a website. Your customers never open a website. They just chat on WhatsApp like normal.</p></article>
+        <article class="qa"><h3>❓ Where does it live? Where is it hosted?</h3><p><strong>On our side, on our computers — running 24 hours.</strong> You host nothing. You buy nothing. You install nothing. We keep it running.</p></article>
+        <article class="qa"><h3>❓ Is it made only for me, or same for everyone?</h3><p><strong>Both.</strong> One main system for everyone. Then we fit it to <em>your</em> shop — your name, your prices, your timings, your language, your rules. That fitting is part of setup.</p></article>
+        <article class="qa"><h3>❓ How can you reply on MY WhatsApp?</h3><p>You give us <strong>permission</strong> in WhatsApp Business settings — like giving a staff member a key. Meta (WhatsApp's owner) made an official way for businesses to do this. You can see every message. You can remove us anytime. No hack, no ban risk. Your personal WhatsApp is different — we cannot and do not touch that.</p></article>
+        <article class="qa"><h3>❓ What do I need to do?</h3><p>Only 4 things: 1) Your shop name &amp; city 2) Your prices &amp; timings 3) Permission to connect to your business WhatsApp 4) Pay $1 (₹99) by UPI to start. We do the rest.</p></article>
+        <article class="qa"><h3>❓ Who owns LeadCatch?</h3><p><strong>We do — 100% ours.</strong> We built it. When you pay, you are not buying it. You are renting the service — we run a copy for your shop every month.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY SIMPLE -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="tag">Safe rules</span><h2>Fast, but never careless.</h2></div>
+      <div class="safe-grid">
+        <article class="safe-card never"><h3>🚫 We NEVER do this</h3><ul>
+          <li><b>Give medical advice</b> — no medicine, no diagnosis. We send it to you / tell them to see a doctor.</li>
+          <li><b>Make up a price</b> — only your price list. Nothing else.</li>
+          <li><b>Take money</b> — no payment, no deposit, no refund talk.</li>
+          <li><b>Fight with an angry customer</b> — one sorry, then straight to you.</li>
+        </ul></article>
+        <article class="safe-card always"><h3>✅ We ALWAYS do this</h3><ul>
+          <li><b>Send risky chats to you</b> with a short summary, so you can take over in seconds.</li>
+          <li><b>Save every message</b> — you see it all in the morning report.</li>
+          <li><b>Stop if they say no</b> — no more messages to that person, ever.</li>
+          <li><b>Stop if you say stop</b> — you have an OFF switch. One tap, everything stops.</li>
+        </ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="tag">Who is it for?</span><h2>Any business that gets messages and loses them at night.</h2></div>
+      <div class="grid3">
+        <article class="card"><h3>🦷 Dental clinics</h3><p>One missed patient = big loss. We book appointments while you sleep.</p></article>
+        <article class="card"><h3>👗 Cloth &amp; retail shops</h3><p>Price, colour, size questions at night — answered instantly, photos sent.</p></article>
+        <article class="card"><h3>💇 Salons, services, others</h3><p>Same system, your questions. If customers message you, this fits you.</p></article>
+      </div>
+      <p style="text-align:center;margin-top:18px;color:var(--ink-2)">Tested: <strong>6/6 cases passed</strong> — booking, silent customer coming back, angry customer, medical question, money question — all handled right.</p>
+    </div>
+  </section>
+
+  <!-- PRICING - $1 -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto">
+        <span class="tag">Price — really cheap</span>
+        <h2>Start for $1 (₹99). That's it.</h2>
+        <p>We kept it super cheap so you can just try it. One happy customer pays for months. After the trial it's still cheap — ₹499 or ₹999 a month, no setup fee.</p>
+      </div>
+
+      <div class="price-hero">
+        <p style="font-weight:800;letter-spacing:.08em;font-size:13px;color:var(--teal)">14-DAY TRIAL — REALLY CHEAP TO START</p>
+        <p class="big-price">$1 <small>₹99 to start</small></p>
+        <p style="color:var(--ink-2);font-size:17px">Try the full thing on your real customers for 14 days. Just $1 (₹99). No setup fee.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Replies in under 1 minute, 24/7</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>On your busiest channel (WhatsApp)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>We chase silent customers for you</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Morning report every day at 8 AM</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6"/></svg>We set it up with your prices &amp; timings</li>
+        </ul>
+        <a class="btn btn-primary btn-big" href="#faq" style="width:100%;justify-content:center">Start for $1 (₹99) — I want to try →</a>
+        <p class="micro" style="margin-top:12px">No setup fee. No lock-in. Pay by UPI — pilot starts only after we verify the ₹99 credit.</p>
+      </div>
+
+      <div class="price-alt">
+        <div class="mini"><p style="color:var(--ink-3);font-weight:700;font-size:13px">AFTER TRIAL — STARTER</p><p><b>₹499</b> / month</p><p style="color:var(--ink-2);font-size:14px">We keep running it for you on one channel. Cancel anytime.</p></div>
+        <div class="mini"><p style="color:var(--ink-3);font-weight:700;font-size:13px">AFTER TRIAL — FULL</p><p><b>₹999</b> / month</p><p style="color:var(--ink-2);font-size:14px">More enquiries, full follow-ups &amp; daily report. Cancel anytime.</p></div>
+      </div>
+      <p style="text-align:center;margin-top:18px;color:var(--ink-2);font-size:15px">If you don't like it after 14 days: <strong>$0 more</strong> — it stops, you lost only $1 (₹99). That's the whole price. No hidden charges, no setup fee.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head"><span class="tag">Questions</span><h2>Before you pay $1 (₹99)</h2></div>
+      <div class="faq-list">
+        <div class="faq"><button type="button" aria-expanded="false">How do I start?<span class="chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></span></button><div class="ans"><p>Pay $1 (₹99) by UPI, tell us your shop name, city, prices and timings, and give permission for your business WhatsApp. Once we verify the payment in our account, we set it up and it starts replying. That's it.</p></div></div>
+        <div class="faq"><button type="button" aria-expanded="false">What happens after 14 days?<span class="chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></span></button><div class="ans"><p>You will already know from the daily reports — how many people asked, booked, and came back. If you want to continue, it's ₹499/month for Starter or ₹999/month for Full. No setup fee. If not, it stops. No pressure.</p></div></div>
+        <div class="faq"><button type="button" aria-expanded="false">Will it say something wrong?<span class="chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></span></button><div class="ans"><p>No — because it only uses your prices, timings and answers. Anything risky (medicine, money, anger, bargaining) it does not answer. It sends it to you.</p></div></div>
+        <div class="faq"><button type="button" aria-expanded="false">Can I stop it anytime?<span class="chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></span></button><div class="ans"><p>Yes. You have an OFF switch. One tap stops all replies and follow-ups instantly.</p></div></div>
+        <div class="faq"><button type="button" aria-expanded="false">I have a cloth shop, not a clinic. Will it work?<span class="chev"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></svg></span></button><div class="ans"><p>Yes. Same system, different questions. For a shop it asks size, colour, budget, occasion — and sends photos from your list. Bargaining always comes to you.</p></div></div>
+      </div>
+
+      <div style="margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px">
+        <h3 style="margin-bottom:8px">What happens after you start — we chase, you don't.</h3>
+        <p style="color:var(--ink-2)">Day 1: We set up your prices &amp; timings. Day 2: Live on your WhatsApp. Every day: You get the 8 AM report. Day 14: You decide — continue for ₹499/month (Starter) or ₹999/month (Full), or stop. We follow up with <em>you</em> too, so you never have to chase us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap final-in">
+      <h2>Tonight, a customer will message you.<br>Will anyone reply?</h2>
+      <p>Start for $1 (₹99). See tomorrow morning's report and judge it yourself.</p>
+      <a class="btn btn-primary btn-big" href="#pricing">Start for $1 (₹99) →</a>
+      <p class="micro">14 days • Your WhatsApp • Your prices • Stop anytime</p>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap foot-in"><span><b>LeadCatch OS</b> — we reply, so you don't lose customers.</span><span>Example clinic “BrightSmile Dental” is not real. The system behaviour is real and tested.</span></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var faqs = document.querySelectorAll(".faq");
+  faqs.forEach(function(f){
+    var btn = f.querySelector("button");
+    btn.addEventListener("click", function(){
+      var open = f.classList.contains("open");
+      faqs.forEach(function(x){ x.classList.remove("open"); x.querySelector("button").setAttribute("aria-expanded","false"); });
+      if(!open){ f.classList.add("open"); btn.setAttribute("aria-expanded","true"); }
+    });
+  });
+  var STEPS = [
+    { type:"chip",  text:"TUESDAY · CLINIC CLOSED AT 9 PM" },
+    { type:"patient", who:"Priya · new patient", time:"9:47 PM", text:"Hi, I need a root canal. Do you have any slot this Saturday?" },
+    { type:"lc", who:"LeadCatch · replied in 38 sec", time:"9:47 PM", text:"Hello Priya, yes — Saturday has 10:00, 11:30 and 4:00 open. Before I book: is the tooth paining right now, and have you had a root canal before?" },
+    { type:"patient", who:"Priya", time:"9:49 PM", text:"It aches at night. First time for me." },
+    { type:"lc", who:"LeadCatch", time:"9:49 PM", text:"Understood — I've kept Saturday 11:30 for you. Shall I confirm it, or would 10:00 suit you better?" },
+    { type:"chip", text:"PRIYA GOES SILENT" },
+    { type:"lc", who:"LeadCatch · follow-up after 2 hours", time:"11:49 PM", text:"Just holding your Saturday 11:30 slot, Priya — shall I confirm it before it goes?" },
+    { type:"lc", who:"LeadCatch · follow-up next day", time:"Wed 9:49 PM", text:"One last check, Priya — 11:30 on Saturday is still open if you'd like it." },
+    { type:"patient", who:"Priya", time:"Wed 10:05 PM", text:"Sorry, busy day! Yes please, 11:30 works." },
+    { type:"lc", who:"LeadCatch · booked ✓", time:"Wed 10:05 PM", text:"Done — you're booked for Saturday 11:30. We'll send a reminder the day before." },
+    { type:"patient", who:"Rohan · new patient", time:"Wed 10:14 PM", text:"My cheek is swollen and I have fever. Which medicine should I take?" },
+    { type:"lc", who:"LeadCatch · sent to doctor, no advice", time:"Wed 10:14 PM", text:"I'm sorry you're unwell, Rohan. I can't advise on medicines — swelling with fever needs a doctor quickly. I've informed Dr. Sharma right now with your details." },
+    { type:"alert", who:"⚠ Sent to owner · 10:14 PM", text:"Rohan reports swelling + fever and asked for medication. No advice given. Summary sent to Dr. Sharma." },
+    { type:"chip", text:"NEXT MORNING" },
+    { type:"digest", who:"Morning report · to owner", time:"8:00 AM", text:"Good morning, Dr. Sharma. Here is yesterday:", stats:[["People asked","6"],["Replied < 1 min","6"],["Booked","2"],["Came back","1"],["Sent to you","1"],["Lost","0"]] }
+  ];
+  var body = document.getElementById("chatBody");
+  var idle = document.getElementById("chatIdle");
+  var playBtn = document.getElementById("playBtn");
+  var playIcon = document.getElementById("playIcon");
+  var heroPlay = document.getElementById("heroPlay");
+  var bar = document.getElementById("progressBar");
+  var stepLbl = document.getElementById("demoStep");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ICON_PLAY  = '<path d="M7 4.5v15l13-7.5-13-7.5z"/>';
+  var ICON_PAUSE = '<path d="M6.5 4h4v16h-4zM13.5 4h4v16h-4z"/>';
+  var ICON_REPLAY= '<path d="M12 5V1.8L6.8 6 12 10.2V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/>';
+  var idx = 0, playing = false, finished = false, timer = null;
+  function scrollChat(){ body.scrollTop = body.scrollHeight; }
+  function renderStep(s){
+    if(idle){ idle.remove(); idle = null; }
+    var el;
+    if(s.type === "chip"){ el = document.createElement("div"); el.className = "day-chip"; el.textContent = s.text; }
+    else {
+      el = document.createElement("div"); el.className = "msg " + (s.type === "patient" ? "patient" : s.type === "lc" ? "lc" : s.type);
+      el.innerHTML = '<span class="who"></span><span class="txt"></span>';
+      el.querySelector(".who").textContent = s.who; el.querySelector(".txt").textContent = s.text;
+      if(s.type === "digest" && s.stats){
+        var g = document.createElement("div"); g.className = "digest-grid";
+        s.stats.forEach(function(pair){ var d = document.createElement("div"); var a = document.createElement("span"); a.textContent = pair[0]; var b = document.createElement("b"); b.textContent = pair[1]; d.appendChild(a); d.appendChild(b); g.appendChild(d); });
+        el.appendChild(g);
+      }
+      var t = document.createElement("span"); t.className = "time"; t.textContent = s.time; el.appendChild(t);
+    }
+    body.appendChild(el); scrollChat();
+  }
+  function updateHud(){ bar.style.width = (STEPS.length ? (idx / STEPS.length) * 100 : 0) + "%"; stepLbl.textContent = idx + " / " + STEPS.length; playIcon.innerHTML = finished ? ICON_REPLAY : (playing ? ICON_PAUSE : ICON_PLAY); playBtn.setAttribute("aria-label", finished ? "Replay demo" : (playing ? "Pause demo" : "Play demo")); }
+  function schedule(){
+    if(!playing) return; if(idx >= STEPS.length){ finish(); return; }
+    var s = STEPS[idx]; var delay = reduced ? 60 : (s.type === "chip" ? 900 : s.type === "lc" ? 1500 : 1250);
+    if(s.type === "lc" && !reduced){
+      var ty = document.createElement("div"); ty.className = "typing"; ty.innerHTML = "<i></i><i></i><i></i>"; body.appendChild(ty); scrollChat();
+      timer = setTimeout(function(){ ty.remove(); renderStep(s); idx++; updateHud(); schedule(); }, delay);
+    } else { timer = setTimeout(function(){ renderStep(s); idx++; updateHud(); schedule(); }, delay); }
+  }
+  function finish(){ playing = false; finished = true; updateHud(); }
+  function reset(){ clearTimeout(timer); body.innerHTML = ""; idx = 0; finished = false; }
+  function toggle(){ if(finished){ reset(); playing = true; updateHud(); schedule(); return; } playing = !playing; updateHud(); if(playing){ schedule(); } else { clearTimeout(timer); } }
+  playBtn.addEventListener("click", toggle);
+  heroPlay.addEventListener("click", function(){ document.getElementById("demo").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }); if(finished) reset(); if(!playing){ playing = true; updateHud(); schedule(); } });
+  updateHud();
+})();
+</script>
+</body>
+</html>
